@@ -33,19 +33,19 @@ This lab simulates a real-world penetration testing scenario for the client **St
 ### Section 1: Configure Burp Suite as a Proxy
 The attacker workstation (Kali Linux) was prepared to act as an interceptor. Burp Suite was configured as an unauthorized web proxy by adding a new proxy listener bound to a specific IP address (**10.1.16.66**) and port (**8080**). This setup ensures that any traffic directed to this address can be inspected and manipulated.
 <p align="center">
-  <img src="path/to/Section1.PNG" width="45%" alt="pics"/>
+  <img src="Section1.PNG" width="45%" alt="pics"/>
 </p>
 
 ### Section 2: Create an Attack Script
 The attacker created a malicious batch file named `newproxy.bat` using the **vim** editor. This script targets Windows registry settings (`HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings`) to force the victim's system to use the attacker's IP as its **ProxyServer** and sets **ProxyEnable** to true. The **Apache2** service was started to host and deliver the file.
 <p align="center">
-  <img src="path/to/Section2.PNG" width="45%" alt="pics"/>
+  <img src="Section2.PNG" width="45%" alt="pics"/>
 </p>
 
 ### Section 3: Play the Victim
 This section simulates the human element of the attack through social engineering. The victim followed unsolicited instructions to download and run the `newproxy.bat` file. Despite a security warning stating the publisher could not be verified, the victim clicked **"Run,"** which successfully rerouted their web traffic through the attacker's proxy.
 <p align="center">
-  <img src="path/to/Section3.PNG" width="45%" alt="pics"/>
+  <img src="Section3.PNG" width="45%" alt="pics"/>
 </p>
 
 ### Section 4: Discover AitM Captured Credentials
@@ -53,5 +53,5 @@ With the proxy active, the attacker monitored the **HTTP history** in Burp Suite
 * **Email:** `jaime@structureality.com`
 * **Password:** `Pa55w0rd!`
 <p align="center">
-  <img src="path/to/Section4.PNG" width="45%" alt="pics"/>
+  <img src="Section4.PNG" width="45%" alt="pics"/>
 </p>
